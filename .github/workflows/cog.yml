@@ -1,11 +1,9 @@
 name: Push to Replicate
 
 on:
-  workflow_dispatch:
-    inputs:
-      model_name:
-        required: true
-        description: "cog-faceswap"
+  push:
+    branches:
+      - main
 
 jobs:
   build:
@@ -21,4 +19,4 @@ jobs:
 
       - name: Push to Replicate
         run: |
-          cog push r8.im/${{ inputs.model_name }}
+          cog push r8.im/zeke/hello-world
